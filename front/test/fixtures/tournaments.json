@@ -1,0 +1,62 @@
+[
+  {
+    "id": 15367,
+    "name": "MTGO Competitive Legacy Constructed League",
+    "event_date": "2017-04-26",
+    "format_name": "legacy"
+  },
+  {
+    "id": 15368,
+    "name": "MTGO Competitive Modern Constructed League",
+    "event_date": "2017-04-26",
+    "format_name": "modern"
+  },
+  {
+    "id": 15369,
+    "name": "MTGO Competitive Standard Constructed League",
+    "event_date": "2017-04-26",
+    "format_name": "standard"
+  },
+  {
+    "id": 15358,
+    "name": "MTGO Competitive Standard Constructed League",
+    "event_date": "2017-04-25",
+    "format_name": "standard"
+  },
+  {
+    "id": 15355,
+    "name": "MTGO Vintage Daily",
+    "event_date": "2017-04-25",
+    "format_name": "vintage"
+  },
+  {
+    "id": 15356,
+    "name": "MTGO Competitive Legacy Constructed League",
+    "event_date": "2017-04-25",
+    "format_name": "legacy"
+  },
+  {
+    "id": 15349,
+    "name": "MTGO Vintage Daily",
+    "event_date": "2017-04-24",
+    "format_name": "vintage"
+  },
+  {
+    "id": 15351,
+    "name": "MTGO Competitive Modern Constructed League",
+    "event_date": "2017-04-24",
+    "format_name": "modern"
+  },
+  {
+    "id": 15366,
+    "name": "MTGO Competitive Standard Constructed League",
+    "event_date": "2017-04-24",
+    "format_name": "standard"
+  },
+  {
+    "id": 15363,
+    "name": "CLM @ Spellbox III",
+    "event_date": "2017-04-24",
+    "format_name": "commander"
+  }
+]

@@ -1,0 +1,23 @@
+FROM python:3.5
+ENV PYTHONUNBUFFERED 1
+
+# Requirements have to be pulled and installed here, otherwise caching won't work
+COPY ./resources/requirements /requirements
+RUN pip install -r /requirements/local.txt
+
+COPY ./resources/bin /bin
+
+RUN mkdir -p /etc/flower /var/flower/db
+COPY ./flower/flowerconfig.py /etc/flower/flowerconfig.py
+
+WORKDIR /app
+
+ENV DJANGO_SETTINGS_MODULE=config.settings.local
+ENV SECRET_KEY tksdx#xm-t-zktu+84(^88x8np8ou1oq%8^j^f_m*me358y83y
+ENV DB_USER mtg
+ENV DB_PASSWORD mtgmtg
+ENV RABBIT_USER guest
+ENV RABBIT_PASSWORD guest
+
+# create unprivileged user
+RUN adduser --disabled-password --gecos '' myuser

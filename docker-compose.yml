@@ -1,0 +1,85 @@
+version: '2'
+
+services:
+  # PostgreSQL database
+  postgres:
+    build: ./compose/postgres
+    environment:
+      - POSTGRES_USER=mtg
+      - POSTGRES_PASSWORD=mtgmtg
+      - POSTGRES_DB=mtg
+    volumes:
+      - ./volumes/postgres/data:/var/lib/postgresql/data
+      - ./volumes/postgres/backup:/backups
+
+  # Redis
+  redis:
+    image: redis
+    hostname: redis
+
+  # RabbitMQ
+  rabbit:
+    hostname: rabbit
+      - ./front:/data
+    image: rabbitmq:3-management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "127.0.0.1:5672:5672"  # we forward this port because it's useful for debugging
+      - "127.0.0.1:15672:15672"  # here, we can access rabbitmq management plugin
+
+  # Django web server
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: web
+    command: ./run_web.sh
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "8000:8000"
+    # set up links so that web knows about postgres, rabbit and redis
+    depends_on:
+      - postgres
+
+  # Celery worker
+  worker:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./run_celery.sh
+    depends_on:
+      - rabbit
+
+  # Celery beat
+  beat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./run_beat.sh
+    depends_on:
+      - rabbit
+
+  # Celery monitoring
+  monitoring:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ./run_monitoring.sh
+    depends_on:
+      - rabbit
+    ports:
+      - "5555:5555"
+      - "5556:5556"
+
+  # Node container
+  front:
+    image: node
+    command: bash -c "cd data && npm run dev"
+    depends_on:
+      - rabbit
+    ports:
+      - "8080:8080"

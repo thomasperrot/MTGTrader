@@ -1,0 +1,102 @@
+version: '2'
+
+services:
+  # PostgreSQL database
+  postgres:
+    build:
+      context: ./docker/postgres
+      dockerfile: Dockerfile-raspberrypi
+    environment:
+      - POSTGRES_DB=mtg
+    volumes:
+      - ./volumes/postgres/data:/var/lib/postgresql/data
+      - ./volumes/postgres/backup:/backups
+
+  # Redis
+  redis:
+    image: mangoraft/redis-arm
+    hostname: redis
+
+  # RabbitMQ
+  rabbit:
+    hostname: rabbit
+    image: santoslab/arm-rabbitmq:management
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "5672:5672"  # we forward this port because it's useful for debugging
+      - "15672:15672"  # here, we can access rabbitmq management plugin
+
+  # Django web server
+  web:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-dev
+    hostname: web
+    command: bash -c "sh /bin/run_web_dev.sh"
+    environment:
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+    ports:
+      - "8000:8000"
+    # set up links so that web knows about postgres, rabbit and redis
+    depends_on:
+      - postgres
+      - rabbit
+      - redis
+    volumes:
+      - ./mtg:/app
+
+  # Celery worker
+  worker:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-dev
+    command: bash -c "sh /bin/run_celery.sh"
+    depends_on:
+      - postgres
+      - rabbit
+      - redis
+    volumes:
+      - ./mtg:/app
+
+  # Celery beat
+  beat:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-dev
+    command: bash -c "sh /bin/run_beat.sh"
+    depends_on:
+      - postgres
+      - rabbit
+      - redis
+    volumes:
+      - ./mtg:/app
+
+  # Celery monitoring
+  monitoring:
+    build:
+      context: ./docker
+      dockerfile: Dockerfile-dev
+    command: bash -c "sh /bin/run_monitoring.sh"
+    depends_on:
+      - postgres
+      - rabbit
+      - redis
+    ports:
+      - "5555:5555"
+      - "5556:5556"
+    volumes:
+      - ./mtg:/app
+
+  # Node container
+  front:
+    image: node
+    command: bash -c "cd data && npm run dev"
+    depends_on:
+      - rabbit
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./front:/data

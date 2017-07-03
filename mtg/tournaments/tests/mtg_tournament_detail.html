@@ -1,0 +1,393 @@
+
+
+<html>
+<head>
+<title>MUD - Hrymfaxe @ mtgtop8.com</title>
+<link rel="icon" type="image/png" href="http://www.mtgtop8.com/graph/favicon.png">
+<link href="styles.css" rel="stylesheet" type="text/css">
+
+</head>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-40385198-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script><script async='async' src='https://www.googletagservices.com/tag/js/gpt.js'></script>
+	<script>
+		var googletag = googletag || {};
+		googletag.cmd = googletag.cmd || [];
+	</script>
+
+
+<script type="text/javascript">
+
+function AffOther(pref){
+	odel=document.getElementById("other_div");
+	var r = odel.getBoundingClientRect();
+
+	if (document.documentElement && document.documentElement.scrollTop) {theTop = document.documentElement.scrollTop;}
+	else if (document.body) {theTop = document.body.scrollTop;}
+
+	document.getElementById("other_tooltip").style.width=(r.right-r.left+80)+"px";
+	document.getElementById("other_tooltip").style.left=(r.left-40)+"px";
+	document.getElementById("other_tooltip").style.top=(theTop+r.top+22)+"px";
+	document.getElementById("other_tooltip").style.visibility="visible";
+
+}
+
+function EffOther(){document.getElementById('other_tooltip').style.visibility='hidden';}
+
+</script>
+<body >
+
+<script src="js/jquery.min.js"></script>
+
+
+<div id=other_tooltip style="visibility:hidden;width:130px;z-index:10;position: absolute;box-shadow: 0px 0px 10px #666666;padding:2px;background:#00528b;border: 1px white solid;">
+
+	<div id=other_tooltip_content style="padding:3px;" align=center>
+	<div style="padding-bottom:20px;"><a href=format_limited><img id=menu_limited src=graph/menu/limited.png onmouseover="this.src='graph/menu/limited_h.png'" onmouseout="this.src='graph/menu/limited.png'"></a></div>
+	<div style="padding-bottom:20px;"><a href=format?f=PAU><img id=menu_pauper src=graph/menu/pauper.png onmouseover="this.src='graph/menu/pauper_h.png'" onmouseout="this.src='graph/menu/pauper.png'"></a></div>
+	<div style="padding-bottom:20px;"><a href=format?f=PEA><img id=menu_peasant src=graph/menu/peasant.png onmouseover="this.src='graph/menu/peasant_h.png'" onmouseout="this.src='graph/menu/peasant.png'"></a></div>
+	<div style="padding-bottom:20px;"><a href=format?f=BL><img id=menu_block src=graph/menu/block.png onmouseover="this.src='graph/menu/block_h.png'" onmouseout="this.src='graph/menu/block.png'"></a></div>
+	<div style="padding-bottom:20px;"><a href=format?f=EX><img id=menu_extended src=graph/menu/extended.png onmouseover="this.src='graph/menu/extended_h.png'" onmouseout="this.src='graph/menu/extended.png'"></a></div>
+	<div style="padding-bottom:20px;"><a href=format?f=HIGH><img id=menu_highlander src=graph/menu/highlander.png onmouseover="this.src='graph/menu/highlander_h.png'" onmouseout="this.src='graph/menu/highlander.png'"></a></div>
+	<div style="padding-bottom:20px;"><a href=format?f=CHL><img id=menu_canadian_highlander src=graph/menu/canadian_highlander.png onmouseover="this.src='graph/menu/canadian_highlander_h.png'" onmouseout="this.src='graph/menu/canadian_highlander.png'"></a></div>
+	<div onclick="EffOther();" style="cursor:pointer;" class=W12>close</div>
+	</div>
+
+</div>
+<div align=center>
+
+<table border=0 width=1000  align=center>
+  <tr height=100>
+    <td  align=center>
+    	<a href=index><img border=0 src=graph/title.png></a>
+    	<div class=G16 style="margin-top:10px;">netdecking with the stars</div>
+    </td>
+    <td align=right ><div style="width:728;height:90;overflow:hidden;">
+	<!-- Yieldlove AdTag - mtgtop8.com_d_728x90_1 -->
+	<div id='div-gpt-ad-1407836161893-0'>
+	  <script type='text/javascript'>
+		googletag.cmd.push(function() {
+		  googletag.pubads().display('/53015287/mtgtop8.com_d_728x90_1', [728, 90], 'div-gpt-ad-1407836161893-0');
+		});
+	  </script>
+	</div></div></td>
+  </tr>
+</table>
+
+<div style="background:#00528b;padding:0px;">
+<table border=0 width=1000 height=30 align=center cellspacing=0 cellpadding=0>
+  <tr>
+<td align=center><a href=format?f=VI><img src=graph/menu/vintage_c.png></a></td>
+<td align=center><a href=format?f=LE><img id=menu_legacy src=graph/menu/legacy.png onmouseover="this.src='graph/menu/legacy_h.png'" onmouseout="this.src='graph/menu/legacy.png'"></a></td>
+<td align=center><a href=format?f=MO><img id=menu_modern src=graph/menu/modern.png onmouseover="this.src='graph/menu/modern_h.png'" onmouseout="this.src='graph/menu/modern.png'"></a></td>
+<td align=center><a href=format?f=ST><img id=menu_standard src=graph/menu/standard.png onmouseover="this.src='graph/menu/standard_h.png'" onmouseout="this.src='graph/menu/standard.png'"></a></td>
+<td align=center><a href=format?f=EDH><img id=menu_commander src=graph/menu/commander.png onmouseover="this.src='graph/menu/commander_h.png'" onmouseout="this.src='graph/menu/commander.png'"></a></td>
+<td align=center><div id=other_div onclick="AffOther('');" style="cursor:pointer;"><img id=menu_other src=graph/menu/other.png onmouseover="this.src='graph/menu/other_h.png'" onmouseout="this.src='graph/menu/other.png'"></div></td>
+<td align=center><a href=search><img id=menu_search src=graph/menu/search.png onmouseover="this.src='graph/menu/search_h.png'" onmouseout="this.src='graph/menu/search.png'"></a></td>
+<td align=center><a href=submit><img id=menu_submit src=graph/menu/submit.png onmouseover="this.src='graph/menu/submit_h.png'" onmouseout="this.src='graph/menu/submit.png'"></a></td></tr>
+</table>
+</div>
+
+</div>
+<script language="JavaScript">
+<!--
+//cur_id="";
+cur_id="";
+first_p="";
+first_MTGO_ID="";
+first_ch_price="";
+b_language="fr";
+
+function ShowList(cl){
+	if(cl=="top8"){o_cl="pts";}else{o_cl="top8";}
+	document.getElementById(o_cl+"_list").style.display="none";
+	document.getElementById(cl+"_list").style.display="block";
+
+	document.getElementById(o_cl+"_header").style.borderTop="2px white solid";
+	document.getElementById(o_cl+"_header").style.borderBottom="2px #cccccc solid";
+	document.getElementById(cl+"_header").style.borderTop="2px #cccccc solid";
+	document.getElementById(cl+"_header").style.borderBottom="2px white solid";
+}
+
+AffCard(cur_id,first_p,first_MTGO_ID,first_ch_price);
+RequestContent("tcg_price?f=VI&d=297528&c=4+Ancient+Tomb%7C%7C4+Arcbound+Ravager%7C%7C1+Black+Lotus%7C%7C1+Chalice+of+the+Void%7C%7C2+Crucible+of+Worlds%7C%7C4+Foundry+Inspector%7C%7C4+Grafdigger%27s+Cage%7C%7C4+Hangarback+Walker%7C%7C3+Karakas%7C%7C1+Lodestone+Golem%7C%7C1+Mana+Crypt%7C%7C3+Mishra%27s+Factory%7C%7C4+Mishra%27s+Workshop%7C%7C1+Mox+Emerald%7C%7C1+Mox+Jet%7C%7C1+Mox+Pearl%7C%7C1+Mox+Ruby%7C%7C1+Mox+Sapphire%7C%7C4+Phyrexian+Revoker%7C%7C4+Precursor+Golem%7C%7C4+Relic+of+Progenitus%7C%7C1+Sol+Ring%7C%7C4+Sphere+of+Resistance%7C%7C1+Strip+Mine%7C%7C4+Thorn+of+Amethyst%7C%7C1+Tolarian+Academy%7C%7C1+Trinisphere%7C%7C4+Walking+Ballista%7C%7C4+Wasteland%7C%7C2+Wurmcoil+Engine%7C%7C", "tcg_price" );
+
+function AffCard(id,pname,MTGO_ID,ch_price){
+	if(cur_id!=""){
+		if (document.getElementById('md'+cur_id)) {document.getElementById('md'+cur_id).className='hover_tr';}
+		if (document.getElementById('md'+cur_id+'_t')) {document.getElementById('md'+cur_id+'_t').className='L14';}
+		if (document.getElementById('sb'+cur_id)) {document.getElementById('sb'+cur_id).className='hover_tr';}
+		if (document.getElementById('sb'+cur_id+'_t')) {document.getElementById('sb'+cur_id+'_t').className='L14';}
+	}
+	if(id!=""){
+	if (document.getElementById('md'+id)) {document.getElementById('md'+id).className='chosen_tr';}
+	if (document.getElementById('md'+id+'_t')) {document.getElementById('md'+id+'_t').className='W14';}
+	if (document.getElementById('sb'+id)) {document.getElementById('sb'+id).className='chosen_tr';}
+	if (document.getElementById('sb'+id+'_t')) {document.getElementById('sb'+id+'_t').className='W14';}
+	}
+	RequestContent("ch_deck_card?gamerid="+id+"&MTGO_ID="+MTGO_ID+"&ch_price="+ch_price+"&pname="+pname, "card_div" );
+	setTimeout(ShowCardLink, 500);
+	cur_id=id;
+}
+
+function ShowCardLink(){
+	if(b_language=="fr"){
+		document.getElementById("card_infos_link").innerHTML="<a target=_blank href=mv_redir?c="+cur_id+">Plus d'informations sur cette carte<br>sur magic-ville.com</a>";
+	}
+}
+
+function RequestContent(my_url,my_dest) {
+var xhr_object = null;
+
+if(window.XMLHttpRequest) // Firefox
+   xhr_object = new XMLHttpRequest();
+else if(window.ActiveXObject) // Internet Explorer
+   xhr_object = new ActiveXObject("Microsoft.XMLHTTP");
+
+
+xhr_object.open("POST", my_url, true);
+
+xhr_object.onreadystatechange = function() {
+   if(xhr_object.readyState == 4) document.getElementById(my_dest).innerHTML=xhr_object.responseText;
+}
+
+xhr_object.send(null);
+}
+
+
+//-->
+</script>
+<div align=center class=page>
+<div style="width:1000px;" valign=top>
+
+<div class=w_title align=center>
+<table border=0 width=100%>
+    <td width=50% class=S18 align=center>MTGO Vintage Challenge</td>
+    <td width=50% class=S16 >#2 MUD - <a class=player href=search?player=Hrymfaxe>Hrymfaxe</a></td>
+  </tr>
+</table>
+</div>
+
+<table border=0 width=100%>
+  <tr>
+    <td valign=top width=25%>
+<div style="border-width:0px 2px 2px 2px;border-style:solid;border-color:#cccccc;padding:0px 2px 2px 2px;border-radius:0px 0px 5px 5px;">
+<table border=0 class=Stable width=98% align=center  cellpadding=0>
+
+<tr>
+  <td class=S14 align=center>
+	Vintage <div class=O16><img src=graph/star.png><img src=graph/star.png></div>11/06/17
+	<div class=S10 style="width:180px;overflow:hidden;"><a target=_blank href=http://magic.wizards.com/en/articles/archive/mtgo-standings/vintage-challenge-2017-06-11>http://magic.wizards.com/en/articles/archive/mtgo-...</a></div>
+  </td></tr>
+</table>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>1</div>
+			  <div class=S14><a  href=?e=15881&d=297513&f=VI>UW Monastery</a></div>
+			  <div align=right class=G11><a class=player href=search?player=Egget>Egget</a></div>
+			</div>
+			<div class=chosen_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=W14>2</div>
+			  <div class=W14><a class=topic href=?e=15881&d=297528&f=VI>MUD</a></div>
+			  <div align=right class=G11><a class=topic href=search?player=Hrymfaxe>Hrymfaxe</a></div>
+			</div>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>3</div>
+			  <div class=S14><a  href=?e=15881&d=297527&f=VI>Oath of Druids</a></div>
+			  <div align=right class=G11><a class=player href=search?player=JoseOrtiz>JoseOrtiz</a></div>
+			</div>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>4</div>
+			  <div class=S14><a  href=?e=15881&d=297526&f=VI>Monastery</a></div>
+			  <div align=right class=G11><a class=player href=search?player=ecobaronen>ecobaronen</a></div>
+			</div>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>5</div>
+			  <div class=S14><a  href=?e=15881&d=297525&f=VI>Paradoxical Control</a></div>
+			  <div align=right class=G11><a class=player href=search?player=freakflag>freakflag</a></div>
+			</div>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>6</div>
+			  <div class=S14><a  href=?e=15881&d=297524&f=VI>Monastery</a></div>
+			  <div align=right class=G11><a class=player href=search?player=SvenGoSagan>SvenGoSagan</a></div>
+			</div>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>7</div>
+			  <div class=S14><a  href=?e=15881&d=297523&f=VI>Merfolk</a></div>
+			  <div align=right class=G11><a class=player href=search?player=Uncle_Rico>Uncle_Rico</a></div>
+			</div>
+			<div class=hover_tr style="padding:4px;margin-top:2px;clear: both;">
+			  <div style="float: left;width:40px;" align=center class=S14>8</div>
+			  <div class=S14><a  href=?e=15881&d=297530&f=VI>Monastery</a></div>
+			  <div align=right class=G11><a class=player href=search?player=ravidel85>ravidel85</a></div>
+			</div>
+</div></td>
+    <td valign=top width=75%>
+		<script language="JavaScript">
+		function flip(ref) {
+			el=document.getElementById("pic_"+ref);
+			var str=el.src;
+			var pic_root="http://www.magic-ville.com/pics/pfou/";
+			if (str.substring(str.length-5,str.length)=="f.jpg") {el.src = pic_root+ref.substring(0,3)+"/"+ref.substring(3,6)+".jpg";}
+			else {el.src = pic_root+ref.substring(0,3)+"/"+ref.substring(3,6)+"f.jpg";}
+		}
+		</script>
+
+		<table border=0 width=100% cellpadding=0 cellspacing=0>
+		  <tr>
+		    <td align=center valign=top><div class=Nav_nolink>MD 60 | SB 15 </div></td>
+		    <td align=center valign=top><div class=Nav_link>Export <a href=mtgo?d=297528&f=Vintage_MUD_by_Hrymfaxe>MTGO</a> | <a href=dec?d=297528&f=Vintage_MUD_by_Hrymfaxe>.dec</a></div></td>
+		    <td align=center valign=top><div class=Nav_link><a href=archetype?a=120>MUD decks</a></div></td>
+			<td align=center valign=top><div class=Nav_buy onclick="document.getElementById('cardkingdom-form').submit();">Card Kingdom</div><div class=S14>$<span class=O14>3870</span> <span class=G11>(NM)</span></td>
+		    <td align=center valign=top><div class=Nav_buy><a target=_blank href="tcg_redir?f=VI&c=4 Ancient Tomb||4 Arcbound Ravager||1 Black Lotus||1 Chalice of the Void||2 Crucible of Worlds||4 Foundry Inspector||4 Grafdigger's Cage||4 Hangarback Walker||3 Karakas||1 Lodestone Golem||1 Mana Crypt||3 Mishra's Factory||4 Mishra's Workshop||1 Mox Emerald||1 Mox Jet||1 Mox Pearl||1 Mox Ruby||1 Mox Sapphire||4 Phyrexian Revoker||4 Precursor Golem||4 Relic of Progenitus||1 Sol Ring||4 Sphere of Resistance||1 Strip Mine||4 Thorn of Amethyst||1 Tolarian Academy||1 Trinisphere||4 Walking Ballista||4 Wasteland||2 Wurmcoil Engine||">TCGplayer</a></div><div><div id=tcg_price style="display:inline-block;" class=S14><img style="vertical-align:-20%;" src=graph/loading19.gif></div></div></td>
+			<td align=center valign=top><div class=Nav_buy onclick="document.getElementById('cardhoarder-form').submit();">Cardhoarder</div><div class=S14><span class=O14>600</span> TIX</div></td>
+		  </tr>
+		</table>
+		<table border=0 class=Stable width=100%>
+		  <tr><td><table border=0 width=100% cellpadding=0 cellspacing=0>
+	  <tr><td valign=top ><table border=0 width=100% cellspacing=0><tr ><td class=O13>17 LANDS</td></tr><tr ><td class=G14><div id=mdtem007 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('tem007','Ancient+Tomb','52697','3.73');">4 <span id=mdtem007_t class=L14>Ancient Tomb</span></div></td></tr><tr ><td class=G14><div id=md4th217 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('4th217','Mishra\'s+Factory','37929','0.18');">3 <span id=md4th217_t class=L14>Mishra's Factory</span></div></td></tr><tr ><td class=G14><div id=mdant049 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('ant049','Mishra\'s+Workshop','53163','2.29');">4 <span id=mdant049_t class=L14>Mishra's Workshop</span></div></td></tr><tr ><td class=G14><div id=md4th306 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('4th306','Strip+Mine','52853','0.44');">1 <span id=md4th306_t class=L14>Strip Mine</span></div></td></tr><tr ><td class=G14><div id=mdurs303 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('urs303','Tolarian+Academy','52761','1.78');">1 <span id=mdurs303_t class=L14>Tolarian Academy</span></div></td></tr><tr ><td class=G14><div id=mdtem339 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('tem339','Wasteland','60971','49.64');">4 <span id=mdtem339_t class=L14>Wasteland</span></div></td></tr><tr ><td class=O13 height=25 valign=bottom>25 CREATURES</td></tr><tr ><td class=G14><div id=mddrs100 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('drs100','Arcbound+Ravager','48872','9.38');">4 <span id=mddrs100_t class=L14>Arcbound Ravager</span></div></td></tr></table></td><td valign=top ><table border=0 width=100% cellspacing=0><tr ><td class=G14><div id=mdkld215 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('kld215','Foundry+Inspector','62095','0.01');">4 <span id=mdkld215_t class=L14>Foundry Inspector</span></div></td></tr><tr ><td class=G14><div id=mdori229 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('ori229','Hangarback+Walker','58128','3.88');">4 <span id=mdori229_t class=L14>Hangarback Walker</span></div></td></tr><tr ><td class=G14><div id=mdwwk127 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('wwk127','Lodestone+Golem','35709','0.82');">1 <span id=mdwwk127_t class=L14>Lodestone Golem</span></div></td></tr><tr ><td class=G14><div id=mdmbs122 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('mbs122','Phyrexian+Revoker','39569','0.75');">4 <span id=mdmbs122_t class=L14>Phyrexian Revoker</span></div></td></tr><tr ><td class=G14><div id=mdsom194 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('som194','Precursor+Golem','57256','0.01');">4 <span id=mdsom194_t class=L14>Precursor Golem</span></div></td></tr><tr ><td class=G14><div id=mdaer181 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('aer181','Walking+Ballista','62561','10.73');">4 <span id=mdaer181_t class=L14>Walking Ballista</span></div></td></tr><tr ><td class=O13 height=25 valign=bottom>18 OTHER SPELLS</td></tr><tr ><td class=G14><div id=mdabu018 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu018','Black+Lotus','53155','49.51');">1 <span id=mdabu018_t class=L14>Black Lotus</span></div></td></tr><tr ><td class=G14><div id=mdmrd150 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('mrd150','Chalice+of+the+Void','62937','54.40');">1 <span id=mdmrd150_t class=L14>Chalice of the Void</span></div></td></tr></table></td><td valign=top ><table border=0 width=100% cellspacing=0><tr ><td class=G14><div id=mdpmo003 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('pmo003','Mana+Crypt','52941','0.53');">1 <span id=mdpmo003_t class=L14>Mana Crypt</span></div></td></tr><tr ><td class=G14><div id=mdabu173 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu173','Mox+Emerald','52877','11.08');">1 <span id=mdabu173_t class=L14>Mox Emerald</span></div></td></tr><tr ><td class=G14><div id=mdabu174 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu174','Mox+Jet','52713','11.73');">1 <span id=mdabu174_t class=L14>Mox Jet</span></div></td></tr><tr ><td class=G14><div id=mdabu175 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu175','Mox+Pearl','52597','11.65');">1 <span id=mdabu175_t class=L14>Mox Pearl</span></div></td></tr><tr ><td class=G14><div id=mdabu176 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu176','Mox+Ruby','53243','14.55');">1 <span id=mdabu176_t class=L14>Mox Ruby</span></div></td></tr><tr ><td class=G14><div id=mdabu177 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu177','Mox+Sapphire','52919','16.81');">1 <span id=mdabu177_t class=L14>Mox Sapphire</span></div></td></tr><tr ><td class=G14><div id=mdabu240 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('abu240','Sol+Ring','51096','0.31');">1 <span id=mdabu240_t class=L14>Sol Ring</span></div></td></tr><tr ><td class=G14><div id=mdexo120 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('exo120','Sphere+of+Resistance','52731','0.70');">4 <span id=mdexo120_t class=L14>Sphere of Resistance</span></div></td></tr><tr ><td class=G14><div id=mdlor262 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('lor262','Thorn+of+Amethyst','28433','3.64');">4 <span id=mdlor262_t class=L14>Thorn of Amethyst</span></div></td></tr><tr ><td class=G14><div id=mddrs154 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('drs154','Trinisphere','20491','4.88');">1 <span id=mddrs154_t class=L14>Trinisphere</span></div></td></tr></table></td><td valign=top><table border=0 width=100% cellspacing=0><tr><td class=O13>SIDEBOARD</td></tr><tr><td class=G14><div id=sbfda114 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('fda114','Crucible+of+Worlds','20790','17.10');">2  <span id=sbfda114_t class=L14>Crucible of Worlds</span></div></td></tr><tr><td class=G14><div id=sbdka149 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('dka149','Grafdigger\'s+Cage','43491','8.21');">4  <span id=sbdka149_t class=L14>Grafdigger's Cage</span></div></td></tr><tr><td class=G14><div id=sbleg145 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('leg145','Karakas','37885','0.27');">3  <span id=sbleg145_t class=L14>Karakas</span></div></td></tr><tr><td class=G14><div id=sbsoa218 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('soa218','Relic+of+Progenitus','30895','1.29');">4  <span id=sbsoa218_t class=L14>Relic of Progenitus</span></div></td></tr><tr><td class=G14><div id=sbsom223 style="padding:2;cursor:pointer;" class=hover_tr onclick="AffCard('som223','Wurmcoil+Engine','41878','4.00');">2  <span id=sbsom223_t class=L14>Wurmcoil Engine</span></div></td></tr></table></td></tr>
+	</table></td></tr>
+	  </table>
+		<form id=cardhoarder-form method="post" target="_blank" action="https://www.cardhoarder.com/decks/upload?affiliate_id=mtgtop8&utm_campaign=affiliate&utm_source=mtgtop8&utm_medium=deck">
+		<input type=hidden name=data[Deck][cards][1][id] value=37929>
+				<input type=hidden name=data[Deck][cards][1][quantity] value=3>
+				<input type=hidden name=data[Deck][cards][1][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][2][id] value=52853>
+				<input type=hidden name=data[Deck][cards][2][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][2][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][3][id] value=53155>
+				<input type=hidden name=data[Deck][cards][3][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][3][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][4][id] value=52877>
+				<input type=hidden name=data[Deck][cards][4][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][4][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][5][id] value=52713>
+				<input type=hidden name=data[Deck][cards][5][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][5][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][6][id] value=52597>
+				<input type=hidden name=data[Deck][cards][6][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][6][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][7][id] value=53243>
+				<input type=hidden name=data[Deck][cards][7][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][7][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][8][id] value=52919>
+				<input type=hidden name=data[Deck][cards][8][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][8][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][9][id] value=51096>
+				<input type=hidden name=data[Deck][cards][9][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][9][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][10][id] value=62561>
+				<input type=hidden name=data[Deck][cards][10][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][10][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][11][id] value=53163>
+				<input type=hidden name=data[Deck][cards][11][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][11][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][12][id] value=43491>
+				<input type=hidden name=data[Deck][cards][12][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][12][is_sideboard] value=1>
+				<input type=hidden name=data[Deck][cards][13][id] value=48872>
+				<input type=hidden name=data[Deck][cards][13][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][13][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][14][id] value=20491>
+				<input type=hidden name=data[Deck][cards][14][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][14][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][15][id] value=52731>
+				<input type=hidden name=data[Deck][cards][15][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][15][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][16][id] value=20790>
+				<input type=hidden name=data[Deck][cards][16][quantity] value=2>
+				<input type=hidden name=data[Deck][cards][16][is_sideboard] value=1>
+				<input type=hidden name=data[Deck][cards][17][id] value=62095>
+				<input type=hidden name=data[Deck][cards][17][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][17][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][18][id] value=37885>
+				<input type=hidden name=data[Deck][cards][18][quantity] value=3>
+				<input type=hidden name=data[Deck][cards][18][is_sideboard] value=1>
+				<input type=hidden name=data[Deck][cards][19][id] value=28433>
+				<input type=hidden name=data[Deck][cards][19][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][19][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][20][id] value=39569>
+				<input type=hidden name=data[Deck][cards][20][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][20][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][21][id] value=62937>
+				<input type=hidden name=data[Deck][cards][21][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][21][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][22][id] value=58128>
+				<input type=hidden name=data[Deck][cards][22][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][22][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][23][id] value=52941>
+				<input type=hidden name=data[Deck][cards][23][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][23][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][24][id] value=30895>
+				<input type=hidden name=data[Deck][cards][24][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][24][is_sideboard] value=1>
+				<input type=hidden name=data[Deck][cards][25][id] value=57256>
+				<input type=hidden name=data[Deck][cards][25][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][25][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][26][id] value=41878>
+				<input type=hidden name=data[Deck][cards][26][quantity] value=2>
+				<input type=hidden name=data[Deck][cards][26][is_sideboard] value=1>
+				<input type=hidden name=data[Deck][cards][27][id] value=52697>
+				<input type=hidden name=data[Deck][cards][27][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][27][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][28][id] value=60971>
+				<input type=hidden name=data[Deck][cards][28][quantity] value=4>
+				<input type=hidden name=data[Deck][cards][28][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][29][id] value=52761>
+				<input type=hidden name=data[Deck][cards][29][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][29][is_sideboard] value=0>
+				<input type=hidden name=data[Deck][cards][30][id] value=35709>
+				<input type=hidden name=data[Deck][cards][30][quantity] value=1>
+				<input type=hidden name=data[Deck][cards][30][is_sideboard] value=0>
+
+		</form>
+		<form id=cardkingdom-form method="post" target="_blank" action="http://www.cardkingdom.com/builder/beta/?partner=mtgtop8&utm_source=mtgtop8&utm_medium=affiliate&utm_campaign=mtgtop8&partner_args=deck">
+		<input type="hidden" name="c" value="3 Mishra's Factory||1 Strip Mine||1 Black Lotus||1 Mox Emerald||1 Mox Jet||1 Mox Pearl||1 Mox Ruby||1 Mox Sapphire||1 Sol Ring||4 Walking Ballista||4 Mishra's Workshop||4 Grafdigger's Cage||4 Arcbound Ravager||1 Trinisphere||4 Sphere of Resistance||2 Crucible of Worlds||4 Foundry Inspector||3 Karakas||4 Thorn of Amethyst||4 Phyrexian Revoker||1 Chalice of the Void||4 Hangarback Walker||1 Mana Crypt||4 Relic of Progenitus||4 Precursor Golem||2 Wurmcoil Engine||4 Ancient Tomb||4 Wasteland||1 Tolarian Academy||1 Lodestone Golem||">
+		 <input type="hidden" name="partner" value="mtgtop8">
+		</form><div id=card_div style="width:100%;visibility:visible;"></div>
+    </td>
+  </tr>
+</table>
+</div>
+</div>
+<div style="background:#00528b;padding:3px;">
+<div align=center>
+<a class=white href=privacy>Privacy Policy</a>
+<div style="width:1000px;" valign=top class=W10 align=left>
+The information presented on this site about Magic: The Gathering, both literal and graphical, is copyrighted by Wizards of the Coast.
+This website is not produced, endorsed, supported, or affiliated with Wizards of the Coast.
+</div>
+</div>
+
+<div align=center>
+<a href="http://www.xiti.com/xiti.asp?s=475900" title="WebAnalytics" target="_top">
+<script type="text/javascript">
+<!--
+Xt_param = 's=475900&p=';
+try {Xt_r = top.document.referrer;}
+catch(e) {Xt_r = document.referrer; }
+Xt_h = new Date();
+Xt_i = '<img width="80" height="15" border="0" alt="" ';
+Xt_i += 'src="http://logv1.xiti.com/g.xiti?'+Xt_param;
+Xt_i += '&hl='+Xt_h.getHours()+'x'+Xt_h.getMinutes()+'x'+Xt_h.getSeconds();
+if(parseFloat(navigator.appVersion)>=4)
+{Xt_s=screen;Xt_i+='&r='+Xt_s.width+'x'+Xt_s.height+'x'+Xt_s.pixelDepth+'x'+Xt_s.colorDepth;}
+document.write(Xt_i+'&ref='+Xt_r.replace(/[<>"]/g, '').replace(/&/g, '$')+'" title="Internet Audience">');
+//-->
+</script>
+<noscript>
+Mesure d'audience ROI statistique webanalytics par <img width="80" height="15" src="http://logv1.xiti.com/g.xiti?s=475900&p=" alt="WebAnalytics" />
+</noscript></a>
+</div>
+</div>
+</body>
+</html>
