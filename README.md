@@ -1,9 +1,16 @@
+![][py35] [![GitHub forks][forks]][network] [![GitHub stars][stars]][stargazers] [![GitHub license][license]][lic_file]
+
 # MTGTrader
 
-A micro trading tool to predict Magic The Gathering cards prices.
-It uses machine learning algorithms on scrapped data from marketplaces and tournaments results. 
+A micro trading tool to predict Magic The Gathering cards prices. :boom:
 
 ## Overview
+
+* This project crawls data from different sources and uses machine learning model to predict Magic The Gathering cards price.
+* Collected data are cards prices and last major tournaments. Price data are collected from magiccardmarket.eu, and tournament data from mtgtop8.com.
+* All data can be accessed through a REST API
+
+## Environment, Architecture
 
 This project contains two parts:
 
@@ -20,3 +27,18 @@ $ ./script/restart_app.sh
 ## Credits
 
 This project relies on a research paper "Prediction of Price Increase for Magic: The Gathering Cards", published by Matthew Pawlicki, Joseph Polin and Jesse Zhang, from Stanford University. This paper is available in the doc folder.
+
+
+[py35]: https://img.shields.io/badge/python-3.5-brightgreen.svg
+
+[issues_img]: https://img.shields.io/github/issues/thomasperrot/MTGTrader.svg
+[issues]: https://github.com/thomasperrot/MTGTrader/issues
+
+[forks]: https://img.shields.io/github/forks/thomasperrot/MTGTrader.svg
+[network]: https://github.com/thomasperrot/MTGTrader/network
+
+[stars]: https://img.shields.io/github/stars/thomasperrot/MTGTrader.svg
+[stargazers]: https://github.com/thomasperrot/MTGTrader/stargazers
+
+[license]: https://img.shields.io/badge/license-MIT-blue.svg
+[lic_file]: https://raw.githubusercontent.com/thomasperrot/MTGTrader/master/LICENSE
