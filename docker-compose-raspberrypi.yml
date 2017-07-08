@@ -11,6 +11,8 @@ services:
     volumes:
       - ./volumes/postgres/data:/var/lib/postgresql/data
       - ./volumes/postgres/backup:/backups
+     ports:
+      - "5432:5432"
 
   # Redis
   redis:
@@ -32,7 +34,7 @@ services:
   web:
     build:
       context: ./docker
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile-raspberrypi
     hostname: web
     command: bash -c "sh /bin/run_web_dev.sh"
     environment:
@@ -52,7 +54,7 @@ services:
   worker:
     build:
       context: ./docker
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile-raspberrypi
     command: bash -c "sh /bin/run_celery.sh"
     depends_on:
       - postgres
@@ -65,7 +67,7 @@ services:
   beat:
     build:
       context: ./docker
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile-raspberrypi
     command: bash -c "sh /bin/run_beat.sh"
     depends_on:
       - postgres
@@ -78,7 +80,7 @@ services:
   monitoring:
     build:
       context: ./docker
-      dockerfile: Dockerfile-dev
+      dockerfile: Dockerfile-raspberrypi
     command: bash -c "sh /bin/run_monitoring.sh"
     depends_on:
       - postgres
