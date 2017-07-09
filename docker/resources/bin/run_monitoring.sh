@@ -4,4 +4,6 @@
 sleep 10
 
 echo "Starting monitoring..."
-celery flower --app=config.celery:app --loglevel=INFO -S django --conf=/etc/flower/flowerconfig.py
+# broker and broker_api can't be specified in flowerconfig.py. Maybe a bug ?
+flower --broker=amqp://guest:guest@rabbit:5672// --broker_api=http://guest:guest@rabbit:15672/api/ \
+    --conf=/etc/flower/flowerconfig.py

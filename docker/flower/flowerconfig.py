@@ -1,11 +1,10 @@
 # Broker settings
-broker_url = 'amqp://guest:guest@rabbit:5672//'
+# broker_url = 'amqp://guest:guest@rabbit:5672//'
 
 # RabbitMQ management api
-broker_api = 'http://guest:guest@rabbit:15672/api/'
+# broker_api = 'http://guest:guest@rabbit:15672/api/'
 
-# Enable debug logging
-logging = 'DEBUG'
+logging = 'INFO'
 
 # Web server address
 address = '0.0.0.0'

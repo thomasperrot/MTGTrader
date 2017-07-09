@@ -8,7 +8,7 @@ A micro trading tool to predict Magic The Gathering cards prices. :boom:
 
 * This project crawls data from different sources and uses machine learning model to predict Magic The Gathering cards price.
 * Collected data are cards prices and last major tournaments. Price data are collected from magiccardmarket.eu, and tournament data from mtgtop8.com.
-* All data can be accessed through a REST API
+* All data in the application can be accessed through a REST API
 
 ## Environment, Architecture
 
@@ -23,6 +23,16 @@ $ ./script/install_app.sh
 $ ./script/restart_app.sh
 ```
 
+## Entry points
+
+The Django application allows the user to:
+
+* view data in a REST API
+* manage database and schedule tasks in the Django admin interface (with django-celery-beat plugin)
+* manage queues and exchanges in RabbitMQ management interface
+* visualize monitoring dashboards about tasks (with Flower, a celery plugin). Picture is below.
+
+![Flower dashboard][flower]
 
 ## Credits
 
@@ -41,4 +51,6 @@ This project relies on a research paper "Prediction of Price Increase for Magic:
 [stargazers]: https://github.com/thomasperrot/MTGTrader/stargazers
 
 [license]: https://img.shields.io/badge/license-MIT-blue.svg
-[lic_file]: https://raw.githubusercontent.com/thomasperrot/MTGTrader/master/LICENSE
+[lic_file]: https://raw.githubusercontent.com/thomasperrot/MTGTrader/master/LICENCE.txt
+
+[flower]: https://raw.githubusercontent.com/thomasperrot/MTGTrader/master/doc/img/flower_dashboard.png
