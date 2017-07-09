@@ -259,16 +259,16 @@ class Card(models.Model):
     types = models.ManyToManyField(Type, blank=True)
     sub_types = models.ManyToManyField(SubType, blank=True)
     super_types = models.ManyToManyField(SuperType, blank=True)
-    text = models.CharField(max_length=500, blank=True)
-    flavor = models.CharField(max_length=500, blank=True)
+    text = models.CharField(max_length=1000, blank=True)
+    flavor = models.CharField(max_length=1000, blank=True)
     border = models.CharField(max_length=6, choices=Set.BORDER, default='black', blank=True)
 
     # Optional meta fields
     multiverse_id = models.PositiveIntegerField(blank=True, null=True)
     mkm_name = models.CharField(max_length=100, blank=True)
     image_url = models.CharField(max_length=100, blank=True, validators=[validators.URLValidator])
-    original_text = models.CharField(max_length=500, blank=True)
-    original_type = models.CharField(max_length=500, blank=True)
+    original_text = models.CharField(max_length=1000, blank=True)
+    original_type = models.CharField(max_length=1000, blank=True)
 
     # Exotic fields
     number = models.CharField(max_length=25, blank=True)

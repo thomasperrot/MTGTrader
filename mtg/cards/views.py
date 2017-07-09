@@ -8,11 +8,13 @@ Contains views for cards app
 from datetime import date, timedelta
 
 from django.shortcuts import get_object_or_404
+from django.http import HttpResponse
 from rest_framework import viewsets
 from rest_framework.decorators import list_route, detail_route
 from rest_framework.response import Response
 
 from . import serializers
+from . import tasks
 from .models import CardName, Card
 import stats
 import tournaments
@@ -106,3 +108,23 @@ class CardViewSet(viewsets.ReadOnlyModelViewSet):
         features = card.features_set.filter(date=date.today())
 
         return Response(features.features)
+
+
+def harvest_sets(request):
+    """Temporary view to harvest all sets.
+    """
+
+    # TODO: remove me
+
+    tasks.harvest_sets.delay()
+    return HttpResponse("<html><body>Harvesting all sets...</body></html>")
+
+
+def harvest_cards(request):
+    """Temporary view to harvest all cards.
+    """
+
+    # TODO: remove me
+
+    tasks.harvest_cards.delay()
+    return HttpResponse("<html><body>Harvesting all cards...</body></html>")

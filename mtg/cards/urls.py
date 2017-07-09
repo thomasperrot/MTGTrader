@@ -17,4 +17,8 @@ router.register(r'^cards', views.CardViewSet)
 router.register(r'^name', views.CardNameViewSet)
 
 app_name = 'cards'
-urlpatterns = [url(r'^', include(router.urls))]
+urlpatterns = [
+    url(r'^', include(router.urls)),
+    url(r'^harvest-cards/', views.harvest_cards),
+    url(r'^compute-sets/', views.harvest_sets)
+]

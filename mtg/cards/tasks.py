@@ -78,7 +78,7 @@ def post_process_set(set_: Dict) -> None:
     """
 
     if set_['id'] in ('ATQ', 'VMA', 'MED', 'ME2', 'ME3', 'ME4', 'TPR',):
-        set_['relevant'] = False
+        set_['is_relevant'] = False
     elif set_['id'] == 'MM3':
         set_['mkm_name'] = 'Modern Masters 2017'
 
@@ -187,7 +187,7 @@ def harvest_sets() -> None:
 
         logger.info('Saving set {}.'.format(set_dict['name']))
         parsed_set = parse_set(set_dict)
-        post_process_set(set_dict)
+        post_process_set(parsed_set)
 
         set_id = parsed_set.pop('id')
 
@@ -208,6 +208,8 @@ def store_card(card: Dict) -> None:
     """Parse card and stores it in database.
     """
 
+    post_process_card(card)
+
     c = {
         'id': card['id'],
         'name': CardName.objects.get_or_create(name=card['name'])[0],
@@ -219,7 +221,7 @@ def store_card(card: Dict) -> None:
 
     for attr in ['power', 'toughness', 'loyalty', 'mana_cost', 'cmc', 'text', 'flavor', 'border', 'multiverse_id',
                  'image_url', 'original_text', 'original_type', 'number', 'source', 'timeshifted', 'hand', 'life',
-                 'starter']:
+                 'starter', 'mkm_name']:
         if attr in card:
             c[attr] = card[attr]
 
@@ -234,8 +236,6 @@ def store_card(card: Dict) -> None:
                 break
         if d:
             c['release_date'] = timezone.make_aware(d, timezone.get_current_timezone())
-
-    post_process_card(c)
 
     card_obj, created = Card.objects.get_or_create(id=c['id'], defaults=c)
 
