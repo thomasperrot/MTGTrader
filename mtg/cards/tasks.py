@@ -23,6 +23,7 @@ from tournaments.models import Format, Legality
 logger = get_task_logger(__name__)
 
 MTG_URL_CARDS = 'https://api.magicthegathering.io/v1/cards?page={page}&pageSize={page_size}'
+MTG_URL_CARDS_BY_SET = 'https://api.magicthegathering.io/v1/cards?set={set_id}'
 MTG_URL_SETS = 'https://api.magicthegathering.io/v1/sets'
 
 
@@ -67,10 +68,13 @@ def post_process_card(card: Dict) -> None:
         'Heaven // Earth',
         'Gisela, the Broken Blade / Brisela, Voice of Nightmares',
         'Hanweir Battlements / Hanweir, the Writhing Township',
-        'Hanweir Garrison / Hanweir, the Writhing Township'
+        'Hanweir Garrison / Hanweir, the Writhing Township',
+        'Driven / Despair',
+        'Voldaren Pariah / Abolisher of Bloodlines'
     )
     name_to_mkm_name = {subname.strip(): name for name in mkm_names for subname in name.split('/') if subname}
-    card['mkm_name'] = name_to_mkm_name.get(card['name'], '')
+    if card['name'] in name_to_mkm_name:
+        card['mkm_name'] = name_to_mkm_name.get(card['name'], '')
 
 
 def post_process_set(set_: Dict) -> None:
@@ -81,6 +85,8 @@ def post_process_set(set_: Dict) -> None:
         set_['is_relevant'] = False
     elif set_['id'] == 'MM3':
         set_['mkm_name'] = 'Modern Masters 2017'
+    elif set_['id'] == 'DPA':
+        set_['mkm_name'] = 'Duels of the Planeswalkers Decks'
 
 
 def parse_rarity(rarity: str) -> Dict:
@@ -194,8 +200,10 @@ def harvest_sets() -> None:
         set_, created = Set.objects.get_or_create(id=set_id, defaults=parsed_set)
 
         logger.info('Creating booster for set {}.'.format(set_dict['name']))
-        if created and set_.has_booster:
-            store_booster.delay(set_dict)
+        if created:
+            harvest_cards.delay(set_id=set_.id)
+            if set_.has_booster:
+                store_booster.delay(set_dict)
 
 
 @shared_task(soft_time_limit=5,
@@ -279,22 +287,24 @@ def store_card(card: Dict) -> None:
              default_retry_delay=3,
              retry_kwargs={'max_retries': 5},
              rate_limit='10/m',
-             name='Harvest all cards',
+             name='Harvest cards',
              ignore_result=True)
-def harvest_cards(page: int=1) -> None:
+def harvest_cards(page: int=1, set_id: str=None) -> None:
     """Harvests card from MTG API, and stores them in database.
     """
 
     logger.info('Starting to harvest cards.')
 
-    r = requests.get(MTG_URL_CARDS.format(page=page, page_size=100))
+    if set_id:
+        r = requests.get(MTG_URL_CARDS_BY_SET.format(set_id=set_id))
+    else:
+        r = requests.get(MTG_URL_CARDS.format(page=page, page_size=100))
     r.raise_for_status()
 
     cards = r.json()['cards']
-    if not cards:
-        return
-
-    harvest_cards.delay(page + 1)
+    if cards and not set_id:
+        logger.info('Trying to query page {}'.format(page))
+        harvest_cards.delay(page + 1)
 
     for card in cards:
         logger.info('Storing card {}...'.format(card['name']))
@@ -302,5 +312,3 @@ def harvest_cards(page: int=1) -> None:
         for key, value in card.items():
             formated_card[to_snake_case(key)] = value
         store_card.delay(formated_card)
-
-        logger.info('Trying to query page {}'.format(page))

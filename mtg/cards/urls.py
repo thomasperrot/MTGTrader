@@ -20,5 +20,5 @@ app_name = 'cards'
 urlpatterns = [
     url(r'^', include(router.urls)),
     url(r'^harvest-cards/', views.harvest_cards),
-    url(r'^compute-sets/', views.harvest_sets)
+    url(r'^harvest-sets/', views.harvest_sets)
 ]
