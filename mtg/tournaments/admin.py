@@ -14,7 +14,7 @@ class DeckPositionInline(admin.TabularInline):
     model = DeckPosition
     ordering = ('position',)
     extra = 1
-    raw_id_fields = ('tournaments',)
+    raw_id_fields = ('deck', 'tournament')
 
 
 class DeckToCardInline(admin.TabularInline):
@@ -22,7 +22,7 @@ class DeckToCardInline(admin.TabularInline):
     ordering = ('sideboard',)
     classes = ['collapse']
     extra = 1
-    raw_id_fields = ('name',)
+    raw_id_fields = ('card_name', 'deck')
 
 
 @admin.register(Tournament)
