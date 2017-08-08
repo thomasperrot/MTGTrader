@@ -55,7 +55,7 @@ services:
     build:
       context: ./docker
       dockerfile: Dockerfile-raspberrypi
-    command: bash -c "sh /bin/run_celery.sh"
+    command: bash -c "sh /bin/run_celery_rasp.sh"
     depends_on:
       - postgres
       - rabbit

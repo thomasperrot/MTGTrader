@@ -168,7 +168,7 @@ def compute_statistics() -> None:
         predicted_price = Classifier.predict(features.features)
 
         logger.debug('Computing price ratio for card {}...'.format(card))
-        current_prices = Price.objects.filter(card=card, date=date.today())
+        current_prices = Price.objects.get(card=card, date=date.today())
         price_ratio = predicted_price / current_prices.mean_price
 
         logger.debug('Computing playing ratio for card {}...'.format(card))

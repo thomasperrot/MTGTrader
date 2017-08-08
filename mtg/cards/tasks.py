@@ -69,7 +69,7 @@ def post_process_card(card: Dict) -> None:
         'Gisela, the Broken Blade / Brisela, Voice of Nightmares',
         'Hanweir Battlements / Hanweir, the Writhing Township',
         'Hanweir Garrison / Hanweir, the Writhing Township',
-        'Driven / Despair',
+        'Driven // Despair',
         'Voldaren Pariah / Abolisher of Bloodlines'
     )
     name_to_mkm_name = {subname.strip(): name for name in mkm_names for subname in name.split('/') if subname}
